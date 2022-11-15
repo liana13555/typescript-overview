@@ -1,21 +1,21 @@
-const sentence = 'This is a short sentence'
-sentence.includes('is')
-
-interface PostGateKeeper {
-    title: string,
-    daysOld: number,
-    published: boolean
+class ValueHolder<T> {
+    value: T
 }
 
-const post = {
-    title: 'Latest Typescript News',
-    daysOld: 10,
-    published: true,
+const numberWrapper = (value: number): number[] => {
+    return [value]
 }
 
-const printPost = (postToPrint: PostGateKeeper) => {
-    return `${postToPrint.title} (${postToPrint.daysOld} days old) `
+const stringWrapper = (value: string): string[] => {
+    return [value]
 }
 
-printPost(post)
+const booleanWrapper = (value: boolean): boolean[] => {
+    return [value]
+}
 
+const valueWrapper = <T>(value: T): T[] => {
+    return [value]
+}
+
+const value = valueWrapper<number>(10)

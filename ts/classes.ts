@@ -11,7 +11,7 @@ class Car {
     constructor(public color: string, private year: number) {          
     }
 
-    public drive() {
+    drive() {             // public by default
         // console.log('Vroom');  
         this.putInGear
         this.pressPedal
