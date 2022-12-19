@@ -1,34 +1,32 @@
-class Car {
-    // public color: string;                                 
-    // private year: number;  // not access this property from outside the class
+class Vehicle {
+    constructor(public color: string) {}
 
-    // constructor(public color: string, private year: number) {          
-    //     this.color = color
-    //     this.year = year
-    // }
-
-    /*     or just  Property Assignment Shortcut   */
-    constructor(public color: string, private year: number) {          
-    }
-
-    drive() {             // public by default
-        // console.log('Vroom');  
-        this.putInGear
-        this.pressPedal
-        this.turnWheel       
-    }
-
-    private putInGear() {
-    }
-
-    private pressPedal() {
-    }
-
-    private turnWheel() {
+    protected honk(): void {
+        console.log('beep')        
     }
 }
 
-const myCar = new Car('red', 2000)
-myCar.drive()
+class Car extends Vehicle{    
+    constructor(public wheels: number, color: string) { 
+        super(color)
+    }
+    
+    private drive(): void {
+        console.log('vroom vroom')        
+    }
 
-console.log(myCar.color);
+    startDrivingProcess(): void {
+        this.drive()
+        this.honk()
+    }
+}
+
+const car = new Car(4, 'red')
+car.startDrivingProcess()
+
+const vehicle = new Vehicle('orange')
+console.log(vehicle.color)
+
+// vehicle.drive()
+// vehicle.honk()
+

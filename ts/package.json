@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "ts-node-dev --no-notify --respawn index.ts"
+    "start": "ts-node-dev --no-notify --respawn classes.ts"
   },
   "keywords": [],
   "author": "",
